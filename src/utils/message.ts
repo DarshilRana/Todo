@@ -6,10 +6,8 @@ const messages: any = {
   invalidAccessToken: "token is not valid",
   userNotFound: "user not found",
   userDeleted: "user deleted successfully",
-  notAuthorized:"You are not authorize to do this operation"
-
-}
-
+  notAuthorized: "You are not authorize to do this operation",
+};
 
 export const getMessage = (messageKey: string): string => {
   if (!messages[messageKey]) console.warn(`Message not found by ${messageKey}`);

@@ -23,18 +23,16 @@ export enum EHttpCode {
   GATEWAY_TIMEOUT = 504,
 }
 
+export class HttpException extends Error {
+  statusCode: EHttpCode;
+  message: string;
+  error: string | null;
 
-export class HttpException extends Error{
-    statusCode:EHttpCode;
-    message: string;
-    error:string |null;
-
-    constructor(statusCode:EHttpCode,message:string,error?:string){
-        super(message)
-        this.statusCode = statusCode
-        this.message = message;
-        this.error = error || null;
-        Error.captureStackTrace(this)
-    }
-
+  constructor(statusCode: EHttpCode, message: string, error?: string) {
+    super(message);
+    this.statusCode = statusCode;
+    this.message = message;
+    this.error = error || null;
+    Error.captureStackTrace(this);
+  }
 }

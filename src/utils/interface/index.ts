@@ -1,2 +1,2 @@
-export * from './response.interface'
-export * from './list'
+export * from "./response.interface";
+export * from "./list";
